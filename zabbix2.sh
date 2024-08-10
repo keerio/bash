@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # Create the /opt/conf_zabbix2.sh script
+# Run with
+# Download the script from GitHub and execute it
+# curl -sL https://raw.githubusercontent.com/keerio/bash/main/zabbix2.sh | bash
 cat << 'EOF' | sudo tee /opt/conf_zabbix2.sh > /dev/null
 #!/bin/bash
 
