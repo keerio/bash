@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Create the /opt/conf_zabbix2.sh script
+cat << 'EOF' | sudo tee /opt/conf_zabbix2.sh > /dev/null
+#!/bin/bash
+
 # Update package list
 sudo apt update
 
@@ -23,3 +27,9 @@ sudo sed -i "s/^ServerActive=.*/ServerActive=$SERVER_IP/" $ZABBIX_CONFIG
 sudo systemctl restart zabbix-agent2
 
 echo "Zabbix agent2 has been installed and configured with server IP: $SERVER_IP"
+EOF
+
+# Make the /opt/conf_zabbix2.sh script executable
+sudo chmod +x /opt/conf_zabbix2.sh
+
+echo "The script /opt/conf_zabbix2.sh has been created and is ready to be run."
